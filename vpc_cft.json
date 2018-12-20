@@ -24,7 +24,7 @@
                 "EnableDnsSupport": true,
                 "CidrBlock": { "Fn::FindInMap" : [ "VPC", "vpc", "cidr"]},
                 "EnableDnsHostnames": true,
-                " Tags": [{"Value": {"Fn::Join": ["-",[{"Ref": "AWS::StackName"},"vpc"]] }, "Key": "Name"}]
+                "Tags": [{"Value": {"Fn::Join": ["-",[{"Ref": "AWS::StackName"},"vpc"]] }, "Key": "Name"}]
             }
         },
         "PublicSubnet1": {
@@ -54,7 +54,7 @@
                 ],
                 "VpcId": {"Ref": "Vpc"},
                 "CidrBlock": { "Fn::FindInMap" : [ "VPC", "public-subnet3", "cidr"]},
-                "AvailabilityZone": {"Fn::Select": [3,{"Fn::GetAZs": {"Ref": "AWS::Region"} } ]}
+                "AvailabilityZone": {"Fn::Select": [2,{"Fn::GetAZs": {"Ref": "AWS::Region"} } ]}
             }
         },  
         "PrivateSubnet1": {
@@ -87,7 +87,7 @@
                 ],
                 "VpcId": {"Ref": "Vpc"},
                 "CidrBlock": { "Fn::FindInMap" : [ "VPC", "private-subnet3", "cidr"]},
-                "AvailabilityZone": {"Fn::Select": [3,{"Fn::GetAZs": {"Ref": "AWS::Region"} } ]}
+                "AvailabilityZone": {"Fn::Select": [2,{"Fn::GetAZs": {"Ref": "AWS::Region"} } ]}
             }
         },
         "PrivateSubnet4": {
@@ -120,7 +120,7 @@
                 ],
                 "VpcId": {"Ref": "Vpc"},
                 "CidrBlock": { "Fn::FindInMap" : [ "VPC", "private-subnet6", "cidr"]},
-                "AvailabilityZone": {"Fn::Select": [0,{"Fn::GetAZs": {"Ref": "AWS::Region"} } ]}
+                "AvailabilityZone": {"Fn::Select": [2,{"Fn::GetAZs": {"Ref": "AWS::Region"} } ]}
             }
         },  
         "PublicRT": {
