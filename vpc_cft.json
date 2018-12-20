@@ -24,7 +24,7 @@
                 "EnableDnsSupport": true,
                 "CidrBlock": { "Fn::FindInMap" : [ "VPC", "vpc", "cidr"]},
                 "EnableDnsHostnames": true,
-                " Tags": [{"Value": {"Fn::Join": ["-",[{"Ref": "AWS::StackName"},"vpc"]] }, "Key": "Name"}]
+                "Tags": [{"Value": {"Fn::Join": ["-",[{"Ref": "AWS::StackName"},"vpc"]] }, "Key": "Name"}]
             }
         },
         "PublicSubnet1": {
