@@ -311,6 +311,13 @@
                 "RouteTableId": {"Ref": "PrivateRT"}
             }
         },
+        "PrivateSubnet5Association": {
+            "Type": "AWS::EC2::SubnetRouteTableAssociation",
+            "Properties": {
+                "SubnetId": { "Ref": "PrivateSubnet5"},
+                "RouteTableId": {"Ref": "PrivateRT"}
+            }
+        },
         "PrivateSubnet6Association": {
             "Type": "AWS::EC2::SubnetRouteTableAssociation",
             "Properties": {
